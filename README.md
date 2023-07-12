@@ -1,1 +1,2 @@
-# softskills-group4
+# Softskills Gruppe 4
+Smarter wetterbasierter Fensterkontakt
