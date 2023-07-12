@@ -32,7 +32,8 @@ void loop() {
     if ((weatherID_shortened == 3 || weatherID_shortened == 5) && weatherID_last_shortened != 3 && weatherID_last_shortened != 5) {
       int data = digitalRead(DATA);
       if (data == 0) {
-        // E-Mail senden
+        http.begin(client, "http://maker.ifttt.com/trigger/send_email/with/key/" + IFTTT_API_KEY);
+        http.GET();
       }
     }
   }
