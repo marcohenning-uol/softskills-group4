@@ -1,11 +1,15 @@
 #include <ArduinoJson.h>
 #include <WiFiManager.h>
+#include <ESP8266HTTPClient.h>
 WiFiManager wifiManager;
 WiFiClient client;
+HTTPClient http;
 
+#define DATA 4
 
 const String CITY = "Oldenburg";
 const String API_KEY = "XXXXXXXXXX";
+const String IFTTT_API_KEY = "XXXXXXXXXX";
 
 int weatherID = 0;
 int weatherID_shortened = 0;
@@ -22,6 +26,16 @@ void setup() {
 }
 
 void loop() {
+  if (millis() - lastcheck >= 300000) {
+    getCurrentWeatherConditions();
+    lastcheck = millis();
+    if ((weatherID_shortened == 3 || weatherID_shortened == 5) && weatherID_last_shortened != 3 && weatherID_last_shortened != 5) {
+      int data = digitalRead(DATA);
+      if (data == 0) {
+        // E-Mail senden
+      }
+    }
+  }
 }
 
 void getCurrentWeatherConditions() {
