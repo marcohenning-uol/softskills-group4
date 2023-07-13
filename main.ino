@@ -20,17 +20,26 @@ unsigned long lastcheck = 0;
 void setup() {
   Serial.begin(9600);
   pinMode(DATA, INPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
   wifiManager.autoConnect("SWF", "123456789");
   delay(2000);
   getCurrentWeatherConditions();
 }
 
 void loop() {
+  int data = digitalRead(DATA);
+  if (data == 1) {
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(200);
+  }
+  else {
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(200);
+  }
   if (millis() - lastcheck >= 300000) {
     getCurrentWeatherConditions();
     lastcheck = millis();
     if ((weatherID_shortened == 3 || weatherID_shortened == 5) && weatherID_last_shortened != 3 && weatherID_last_shortened != 5) {
-      int data = digitalRead(DATA);
       if (data == 0) {
         http.begin(client, "http://maker.ifttt.com/trigger/send_email/with/key/" + IFTTT_API_KEY);
         http.GET();
