@@ -25,4 +25,5 @@ Nehmen Sie als nächtes ihren persönlichen API Key und geben diesen bei der Var
 Known Issues & Limitations
 
 -Unsicherheit der Wetterdaten: Da der Fensterkontakt auf die Wetterdaten Ihres Standorts angewiesen ist, kann keine hundertprozentige Garantie dafür gegeben werden, dass es tatsächlich regnet, wenn eine Benachrichtigung gesendet wird. Wettervorhersagen können manchmal ungenau sein, weshalb die Möglichkeit von Fehlalarmen besteht
+
 -Abhängigkeit von Internetverbindung: Unser Fensterkontakt benötigt eine aktive Internetverbindung, um die aktuellen Wetterdaten abzurufen. Wenn die Internetverbindung instabil ist oder ausfällt, kann das dazu führen, dass keine Nachricht gesendet wird.
