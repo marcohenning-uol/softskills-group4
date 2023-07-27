@@ -6,7 +6,7 @@ Inbetriebsnahme
 1. Laden Sie den folgenden Code von GitHub herunter:
 (https://github.com/marcohenning-uol/softskills-group4/blob/main/main.ino)
 
-2.Binden Sie die folgenden Bibliotheken in Arduino ein: Arduino Json, WifiManager und ESP8266HTTPClient
+2. Binden Sie die folgenden Bibliotheken in Arduino ein: Arduino Json, WifiManager und ESP8266HTTPClient
 
 3. Erstellen Sie sich einen Account bei OpenWeatherMap (OpenWeatherMap) und ersetzten Sie den Platzhalter der Variable “API_KEY” mit ihrem API Key. Geben Sie bei der Variable “CITY” ihre Stadt ein.
 
